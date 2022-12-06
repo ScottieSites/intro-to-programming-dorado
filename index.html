@@ -23,7 +23,7 @@
 
 
 <section>
-    <h1>Abount Me</h1>
+    <h1>About Me</h1>
 
     <p>My name is Scott Williams. My journey is just begining in this field. I became interested in Software Engineering in 2018 when I mistakingly hit the F12 buttton on the keyboard. This opened dev tools (which I was unaware of at the time) and I thought I hacked into the system. I didn't know how I got there and was curious about what I was looking at. I opened up a separate screen and looked up what it was. From there I was hooked. I looked around to find out how I can learn this new found love and found a few resources that pointed me in the right directtion. <a href="https://www.freecodecamp.org/">freeCodeCamp.org</a> set me on the road to learning about web development.     </p>
   </section>
@@ -32,9 +32,9 @@
     <h1>Work Experience</h1>
 
    <ul>
-       <li>Jaipur Living</li>
-       <li>Regency Lighting</li>
-       <li>Cardinal McClosky</li>
+       <li>Jaipur Living - Customer Service Team Lead</li>
+       <li>Regency Lighting - National account manager </li>
+       <li>Cardinal McClosky - Residnece manager for individuals with developmental disabilities</li>
    </ul>
   </section>
 
@@ -43,21 +43,20 @@
   <ul></ul>
 </section>
 
+
 <section>
-  <h1>Connect</h1>
+  <h2>Leave a Message</h2>
   
-    <form action="" method="get" class="form-example">
-        <div class="form-example">
-          <label for="name">Enter your name: </label>
-          <input type="text" name="name" id="name" required>
-        </div>
-        <div class="form-example">
-          <label for="email">Enter your email: </label>
-          <input type="email" name="email" id="email" required>
-        </div>
-        <div class="form-example">
-          <input type="submit" value="Subscribe!">
-        </div>
+    <form name="leave_message" action="" method="get" >
+          <label>Name: </label>
+          <input type="text" name="name"  required>
+          <label>Enter your email: </label>
+          <input type="email" name="email"  required>
+          <label>Message</label>
+          <textarea name="message" id="message" required></textarea>
+           <button type="submit">Submit</button>
+           
+        
       </form>
 
       <a href="https://github.com/ScottieSites/intro-to-programming-dorado.git">ScottieSites github</a>
@@ -67,7 +66,12 @@
       
     </section>
 
+    <section id="messages">
+      <h2 id='show'>Messages</h2>
+      <ul id="list"></ul>
+          </section>
    
+
 
 <footer></footer>
 
