@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/CSS/style.css">
     <title>Document</title>
 </head>
@@ -31,7 +34,7 @@
   <section>
     <h1>Work Experience</h1>
 
-   <ul>
+   <ul class='exp-list'>
        <li>Jaipur Living - Customer Service Team Lead</li>
        <li>Regency Lighting - National account manager </li>
        <li>Cardinal McClosky - Residnece manager for individuals with developmental disabilities</li>
@@ -47,11 +50,11 @@
 <section>
   <h2>Leave a Message</h2>
   
-    <form name="leave_message" action="" method="get" >
-          <label>Name: </label>
-          <input type="text" name="name"  required>
+    <form name="leave_message" action="" method="get" class="labels">
+          <label class="label">Name: </label>
+          <input type="text" name="name" id="text" required>
           <label>Enter your email: </label>
-          <input type="email" name="email"  required>
+          <input type="email" name="email" id="email" required>
           <label>Message</label>
           <textarea name="message" id="message" required></textarea>
            <button type="submit">Submit</button>
