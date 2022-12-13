@@ -10,16 +10,16 @@ let sectionMessages = document.querySelector('#messages')
 
 
 //Show Messages function
-function showMessages() {
+// function showMessages() {
 
-    if (Boolean(messageItems.firstElementChild) === false) {
-        sectionMessages.style.display = 'none'
-    } else
-        sectionMessages.style.display = 'block'
-}
+//     if (Boolean(messageItems.firstElementChild) === false) {
+//         sectionMessages.style.display = 'none'
+//     } else
+//         sectionMessages.style.display = 'block'
+// }
 
 
-showMessages()
+// showMessages()
 
 
 copyright.innerHTML = `Scott Williams ${thisYear}`
@@ -35,6 +35,7 @@ let skillsList = skillsSection.lastElementChild
 //Loop to add skills
 for (let i = 0; i < skills.length; i++) {
     const skill = document.createElement('li');
+    skill.setAttribute('id', 'web-skills')
     skill.innerText = skills[i]
     skillsList.appendChild(skill)
 
@@ -51,6 +52,8 @@ messageForm.addEventListener('submit', event => {
     let getMessage = document.querySelector('[name="message"]').value
     let messageSection = document.querySelector('#messages')
     let newMessage = document.createElement('li');
+     newMessage.setAttribute('id', 'inputs')
+     
     let removeButton = document.createElement('button')
     let editButton = document.createElement('button')
     let messageList = messageSection.lastElementChild
@@ -63,12 +66,11 @@ messageForm.addEventListener('submit', event => {
     removeButton.setAttribute('type', 'button')
     editButton.innerText = 'edit'
     editButton.setAttribute('type', 'button')
-    newMessage.innerHTML = `<a href=mailto: ${getEmail}>${getName}</a>  <span>wrote: ${getMessage}</span>`
+    newMessage.innerHTML = `<a href=mailto: ${getEmail}>${getName}</a>  <span>wrote:${getMessage}</span>`
     newMessage.appendChild(removeButton)
     messageList.appendChild(newMessage)
     newMessage.appendChild(editButton)
-    messageList.appendChild(newMessage)
-
+    
 
 
     messageForm.reset();
@@ -81,13 +83,37 @@ messageForm.addEventListener('submit', event => {
 
     //Edit button 
     editButton.addEventListener('click', () => {
-        let entry = editButton.parentNode
-        if (newMessage.innerHTML === `<a href=mailto: ${getEmail}>${getName}</a>  <span>wrote: ${getMessage}</span>`) {
-            newMessage.innerHTML = `<a href=mailto: ${getEmail}>${getName}</a>  <span>wrote:  </span>`
-            return entry += newMessage
-        }
+        newMessage.contentEditable = true;
+        console.log();
+        // let editText = newMessage.children
+        // for(let i=0; i<editText.length; i++){
+        //     messageItems = editText[i].innerText
+             
+        //        console.log(messageItems);
+        //       }
+        
+        //console.log(editText[0].innerText);
 
-
+        //  email.value = messageItems.firstElementChild.innerText
+        // console.log(editText.value);
+        //   for(let i=0; i<editText.length; i++){
+        // //     console.log(editText);
+        //  }
+        
+        //let editText = document.querySelector('email')
+        //let editText = messageItems.children
+        //editText.value = messageItems.firstElementChild.firstElementChild.nextElementSibling.innerText
+        //console.log(editText.value);
+        // console.log(editText);
+        // //  for(let i=0; i<editText.length; i++) {
+        //     //  let editTextChild = editText[i].innerText
+        //     //  editText.value = editTextChild
+        //     // editText.value = editTextChild.innerText
+        // }
+// //         editText.value = messageItems.firstElementChild.firstElementChild.nextElementSibling.innerText
+        //   let parent = editButton.parentElement
+        // parent.parentElement.removeChild(parent)
+// // // ;
     })
 
 
