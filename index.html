@@ -1,83 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Work+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/CSS/style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Work+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <title>Document</title>
 </head>
+
 <body>
-  
-    
-
-    <nav class="nav-bar">
-      <h1>Scott Williams</h1>
-    <ul class="nav-bar-list">
-        <li>About Me</li>
-        <li>Projects</li>
-        <li>Work Experience</li>
-        <li>contact Me</li>
-    </ul>
-</nav>
 
 
-<section>
-    <h1>About Me</h1>
+  <div class="nav">
+    <div class="nav-main">
+    <nav class="nav-item nav-item-current nav-item-home">
+      <a class="nav-item-link" href="#">Scott Williams</a>
+    </nav><div class="nav-item nav-item-about">
+      <a class="nav-item-link" href="#about-me">About me</a>
+    </div><div class="nav-item nav-item-projects">
+      <a class="nav-item-link" href="#">Projects</a>
+    </div><div class="nav-item nav-item-work">
+      <a class="nav-item-link" href="#work-experience">Work Experience</a>
+    </div><div class="nav-item nav-item-contact">
+      <a class="nav-item-link" href="#contact">Contact</a>
+    </div>
+  </div>
+  </div>
+<div class="nav-sub">
+</div>
 
-    <p>My name is Scott Williams. My journey is just begining in this field. I became interested in Software Engineering in 2018 when I mistakingly hit the F12 buttton on the keyboard. This opened dev tools (which I was unaware of at the time) and I thought I hacked into the system. I didn't know how I got there and was curious about what I was looking at. I opened up a separate screen and looked up what it was. From there I was hooked. I looked around to find out how I can learn this new found love and found a few resources that pointed me in the right directtion. <a href="https://www.freecodecamp.org/">freeCodeCamp.org</a> set me on the road to learning about web development.     </p>
+
+  <section>
+    <h1 id="about-me">About Me</h1>
+
+    <p>My name is Scott Williams. My journey is just begining in this field. I became interested in Software Engineering
+      in 2018 when I mistakingly hit the F12 buttton on the keyboard. This opened dev tools (which I was unaware of at
+      the time) and I thought I hacked into the system. I didn't know how I got there and was curious about what I was
+      looking at. I opened up a separate screen and looked up what it was. From there I was hooked. I looked around to
+      find out how I can learn this new found love and found a few resources that pointed me in the right directtion. <a
+        href="https://www.freecodecamp.org/">freeCodeCamp.org</a> set me on the road to learning about web development.
+    </p>
   </section>
 
   <section>
-    <h1>Work Experience</h1>
+    <h1 id="work-experience">Work Experience</h1>
 
-   <ul class='exp-list'>
-       <li>Jaipur Living - Customer Service Team Lead</li>
-       <li>Regency Lighting - National account manager </li>
-       <li>Cardinal McClosky - Residnece manager for individuals with developmental disabilities</li>
-   </ul>
+    <ul class='exp-list'>
+      <li class="job-1">Jaipur Living - Customer Service Team Lead</li>
+      <li class="job-2">Regency Lighting - National account manager </li>
+      <li class="job-3">Cardinal McClosky - Residenece manager for individuals with developmental disabilities</li>
+    </ul>
   </section>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <ul></ul>
-</section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul></ul>
+  </section>
+ 
 
+  <section>
+    <h2 id="contact">Leave a Message</h2>
 
-<section>
-  <h2>Leave a Message</h2>
-  
     <form name="leave_message" action="" method="get" class="labels">
-          <label class="label">Name: </label>
-          <input type="text" name="name" id="text" required>
-          <label>Enter your email: </label>
-          <input type="email" name="email" id="email" required>
-          <label>Message</label>
-          <textarea name="message" id="message" required></textarea>
-           <button type="submit">Submit</button>
-           
-        
-      </form>
-
-      <a href="https://github.com/ScottieSites/intro-to-programming-dorado.git">ScottieSites github</a>
-
-      <h2>My Email: Scottwilliams220608@gmail.com</h2>
-
-      
-    </section>
-
-    <section id="messages">
-      <h2 id='show'>Messages</h2>
-      <ul id="list"></ul>
-          </section>
-   
+      <label class="label">Name: </label>
+      <input type="text" name="name" id="text" required>
+      <label>Enter your email: </label>
+      <input type="email" name="email" id="email" required>
+      <label>Message</label>
+      <textarea name="message" id="message" required></textarea>
+      <button type="submit">Submit</button>
 
 
-<footer></footer>
+    </form>
 
-<script src="js/index.js"></script>
+    <a href="https://github.com/ScottieSites/intro-to-programming-dorado.git">ScottieSites github</a>
+
+    <h2>My Email: Scottwilliams220608@gmail.com</h2>
+
+
+  </section>
+
+  <section id="messages">
+    <h2 id='show'>Messages</h2>
+    <ul id="list"></ul>
+  </section>
+
+
+
+  <footer></footer>
+
+  <script src="js/index.js"></script>
 </body>
+
 </html>

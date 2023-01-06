@@ -51,25 +51,39 @@ messageForm.addEventListener('submit', event => {
     let getEmail = document.querySelector('[name="email"]').value
     let getMessage = document.querySelector('[name="message"]').value
     let messageSection = document.querySelector('#messages')
+    //let messageUL = document.querySelector('#list')
+    
+    //let newName = document.createElement('li');
+    let newEmail = document.createElement('li');
     let newMessage = document.createElement('li');
-     newMessage.setAttribute('id', 'inputs')
+    newEmail.setAttribute('class', 'inputs')
+     newMessage.setAttribute('class', 'inputs')
      
     let removeButton = document.createElement('button')
     let editButton = document.createElement('button')
     let messageList = messageSection.lastElementChild
-
+    //console.log(messageSection.messageItems);
+    
     // console.log(h2);
     // console.log(messageSection);
 
 // Remove and Edit button creation 
     removeButton.innerText = 'remove'
     removeButton.setAttribute('type', 'button')
+    removeButton.setAttribute('class', 'remove_edit')
     editButton.innerText = 'edit'
     editButton.setAttribute('type', 'button')
-    newMessage.innerHTML = `<a href=mailto: ${getEmail}>${getName}</a>  <span>wrote:${getMessage}</span>`
-    newMessage.appendChild(removeButton)
+    editButton.setAttribute('class', 'remove_edit')
+    //newName.innerHTML = `${getName}`
+    newEmail.innerHTML = `<a href=mailto: ${getEmail}>${getName}</a> <span>Wrote:  ${getMessage}</span>`
+    //newMessage.innerHTML = `<span>Wrote:  ${getMessage}</span>`
+    //messageList.appendChild(newName)
+    messageList.appendChild(newEmail)
     messageList.appendChild(newMessage)
-    newMessage.appendChild(editButton)
+    //newMessage.appendChild(removeButton)
+    ///newMessage.appendChild(editButton)
+     newEmail.appendChild(removeButton)
+     newEmail.appendChild(editButton)
     
 
 
@@ -84,7 +98,13 @@ messageForm.addEventListener('submit', event => {
     //Edit button 
     editButton.addEventListener('click', () => {
         newMessage.contentEditable = true;
-        console.log();
+        newEmail.contentEditable = true;
+        editButton.contentEditable = false;
+        removeButton.contentEditable = false;
+        //let updateText = newMessage
+        //updateText = newMessage.innerHTML
+        // 
+        //console.log(updateText);
         // let editText = newMessage.children
         // for(let i=0; i<editText.length; i++){
         //     messageItems = editText[i].innerText
