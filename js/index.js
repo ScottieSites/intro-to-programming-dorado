@@ -5,7 +5,7 @@ const thisYear = today.getFullYear()
 let footer = document.querySelector('footer')
 let copyright = document.createElement('p')
 let message = document.querySelector('#message')
-let messageItems = document.querySelector('#list')
+//let messageItems = document.querySelector('#list')
 let sectionMessages = document.querySelector('#messages')
 
 
@@ -47,25 +47,23 @@ const messageForm = document.querySelector('[name="leave_message"]')
 //Create message 
 messageForm.addEventListener('submit', event => {
     event.preventDefault();
-    let getName = document.querySelector('[name="name"]').value
-    let getEmail = document.querySelector('[name="email"]').value
+    let messageItems = document.querySelector('#list')
+    let getName = document.querySelector('[name="name"]')
+    let nameTextNode = document.createTextNode(getName.value)
+    let getEmail = document.querySelector('[name="email"]')
+    let emailTextNode = document.createTextNode(getEmail.value)
     let getMessage = document.querySelector('[name="message"]').value
+    let messageTextNode = document.createTextNode(getMessage.value)
     let messageSection = document.querySelector('#messages')
-    //let messageUL = document.querySelector('#list')
-    
-    //let newName = document.createElement('li');
+        
     let newEmail = document.createElement('li');
     let newMessage = document.createElement('li');
     newEmail.setAttribute('class', 'inputs')
-     newMessage.setAttribute('class', 'inputs')
-     
+    newMessage.setAttribute('class', 'inputs')
     let removeButton = document.createElement('button')
     let editButton = document.createElement('button')
     let messageList = messageSection.lastElementChild
-    //console.log(messageSection.messageItems);
     
-    // console.log(h2);
-    // console.log(messageSection);
 
 // Remove and Edit button creation 
     removeButton.innerText = 'remove'
@@ -77,13 +75,10 @@ messageForm.addEventListener('submit', event => {
     //newName.innerHTML = `${getName}`
     newEmail.innerHTML = `<a href=mailto: ${getEmail}>${getName}</a> <span>Wrote:  ${getMessage}</span>`
     //newMessage.innerHTML = `<span>Wrote:  ${getMessage}</span>`
-    //messageList.appendChild(newName)
     messageList.appendChild(newEmail)
     messageList.appendChild(newMessage)
-    //newMessage.appendChild(removeButton)
-    ///newMessage.appendChild(editButton)
-     newEmail.appendChild(removeButton)
-     newEmail.appendChild(editButton)
+    newEmail.appendChild(removeButton)
+    newEmail.appendChild(editButton)
     
 
 
