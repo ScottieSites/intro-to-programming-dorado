@@ -121,3 +121,28 @@ messageForm.addEventListener('submit', event => {
 
 });
 
+const githubRequest = new XMLHttpRequest();
+
+
+githubRequest.addEventListener("load", function () {
+    
+    let repositories = JSON.parse(this.responseText);
+    console.log(repositories);
+    let projectSection = document.querySelector('#projects')
+    let projectList = projectSection.querySelector('ul')
+    
+    for(let i=0; i<repositories.length; i++){
+        let project = document.createElement('li');
+        projectList.appendChild(project)
+        let repoName = repositories[i].name
+        let repoUrl = repositories[i].html_url
+        let repoDescription  = repositories[i].description
+        project.innerHTML = `<a href=${repoUrl}>${repoName}</a> <span>${repoDescription}<span>`
+        console.log(repositories[i]);
+    
+}
+    
+});
+
+githubRequest.open('GET', "https://api.github.com/users/ScottieSites/repos")
+githubRequest.send(null);
