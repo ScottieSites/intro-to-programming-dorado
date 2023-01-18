@@ -144,5 +144,9 @@ githubRequest.addEventListener("load", function () {
     
 });
 
+
+
+
+
 githubRequest.open('GET', "https://api.github.com/users/ScottieSites/repos")
 githubRequest.send(null);
