@@ -121,28 +121,55 @@ messageForm.addEventListener('submit', event => {
 
 });
 
-const githubRequest = new XMLHttpRequest();
+// const githubRequest = new XMLHttpRequest();
 
 
-githubRequest.addEventListener("load", function () {
+// githubRequest.addEventListener("load", function () {
     
-    let repositories = JSON.parse(this.responseText);
-    console.log(repositories);
-    let projectSection = document.querySelector('#projects')
-    let projectList = projectSection.querySelector('ul')
+//     let repositories = JSON.parse(this.responseText);
+//     console.log(repositories);
+//     let projectSection = document.querySelector('#projects')
+//     let projectList = projectSection.querySelector('ul')
     
-    for(let i=0; i<repositories.length; i++){
-        let project = document.createElement('li');
-        projectList.appendChild(project)
-        let repoName = repositories[i].name
-        let repoUrl = repositories[i].html_url
-        let repoDescription  = repositories[i].description
-        project.innerHTML = `<a href=${repoUrl}>${repoName}</a> <span>${repoDescription}<span>`
-        console.log(repositories[i]);
+//     for(let i=0; i<repositories.length; i++){
+//         let project = document.createElement('li');
+//         projectList.appendChild(project)
+//         let repoName = repositories[i].name
+//         let repoUrl = repositories[i].html_url
+//         let repoDescription  = repositories[i].description
+//         project.innerHTML = `<a href=${repoUrl}>${repoName}</a> <span>${repoDescription}<span>`
+//         console.log(repositories[i]);
     
-}
+// }
     
-});
+// });
+// githubRequest.open('GET', "https://api.github.com/users/ScottieSites/repos")
+// githubRequest.send(null);
 
-githubRequest.open('GET', "https://api.github.com/users/ScottieSites/repos")
-githubRequest.send(null);
+
+
+
+const repositories = "https://api.github.com/users/ScottieSites/repos"
+
+
+
+    fetch(repositories)
+        .then (res => res.json())
+        .then(data => {
+            console.log(data);
+            let projectSection = document.querySelector('#projects')
+            let projectList = projectSection.querySelector('ul')
+            for(let i=0; i<data.length; i++){
+                        let project = document.createElement('li');
+                        projectList.appendChild(project)
+                        let repoName = data[i].name
+                        let repoUrl = data[i].html_url
+                        let repoDescription  = data[i].description
+                        project.innerHTML = `<a href=${repoUrl}>${repoName}</a> <span>${repoDescription}<span>`
+                        console.log(data[i]);
+                    
+                }
+        })
+        .catch(err => {
+            console.log(`error ${err}`);
+        })
