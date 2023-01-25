@@ -12,6 +12,59 @@ body{
     font-family: 'Work Sans', sans-serif;
 }
 
+
+/* Submit button section  */
+.container{
+    overflow: hidden;
+    
+}
+
+.tab .tab-1 {
+    display: flex;
+}
+.tab-2{
+   margin-top: 1rem;
+}
+.tab .tab-2 {
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+tr{
+    transition:all .25s ease-in-out
+}
+tr:hover{
+    background-color:#EEE;
+    cursor: pointer
+}
+
+.button-sec{
+    display: flex;
+    margin-left: 200px;
+}
+
+.button-sec{
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+#show{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.edit-delete{
+    display: inline-block;
+    margin-left: 200px;
+    margin-top: 1rem;
+}
+
+#table{
+    display: inline-block;
+}
+
+
+
 section{
     margin: 25px;
     padding: 20px;

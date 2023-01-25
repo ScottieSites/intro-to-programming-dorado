@@ -70,9 +70,14 @@
 
 
   <section>
+   
+    <a href="https://github.com/ScottieSites/intro-to-programming-dorado.git">ScottieSites github</a>
+  
+    <h2>My Email: Scottwilliams220608@gmail.com</h2>
+   
     <h2 id="contact">Leave a Message</h2>
 
-    <form name="leave_message" action="" method="get" class="labels">
+    <!-- <form name="leave_message" action="" method="get" class="labels">
       <label class="label">Name: </label>
       <input type="text" name="name" id="text" required>
       <label>Enter your email: </label>
@@ -82,19 +87,48 @@
       <button type="submit">Submit</button>
 
 
-    </form>
+    </form> -->
+    
 
-    <a href="https://github.com/ScottieSites/intro-to-programming-dorado.git">ScottieSites github</a>
-
-    <h2>My Email: Scottwilliams220608@gmail.com</h2>
+    
+      <div class="tab tab-2">
+        
+          Name :<input type="text" name="name" id="name">
+          Email :<input type="email" name="email" id="email">
+          Message :<input type="text" name="message" id="message">
+          
+          <div class="button-sec">
+            <button type="submit" id='submit'>Submit</button>
+          </div>
+                
+  </div>
 
 
   </section>
 
   <section id="messages">
-    <h2 id='show'>Messages</h2>
+    
     <ul id="list"></ul>
   </section>
+
+  <div class="container">
+    <div class="tab tab-1">
+      <h2 id='show'>Messages</h2>
+        <table id="table" border="1">
+          
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Messages</th>
+            </tr>
+            <div class="edit-delete">
+              <button id="edit">Edit</button>
+              <button id="delete">Delete</button>
+            </div>
+            </table>
+                </div>
+
+
 
 
 

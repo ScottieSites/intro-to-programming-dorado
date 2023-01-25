@@ -4,22 +4,7 @@ const today = new Date();
 const thisYear = today.getFullYear()
 let footer = document.querySelector('footer')
 let copyright = document.createElement('p')
-let message = document.querySelector('#message')
-let messageItems = document.querySelector('#list')
-let sectionMessages = document.querySelector('#messages')
 
-
-//Show Messages function
-// function showMessages() {
-
-//     if (Boolean(messageItems.firstElementChild) === false) {
-//         sectionMessages.style.display = 'none'
-//     } else
-//         sectionMessages.style.display = 'block'
-// }
-
-
-// showMessages()
 
 
 copyright.innerHTML = `Scott Williams ${thisYear}`
@@ -41,85 +26,86 @@ for (let i = 0; i < skills.length; i++) {
 
 }
 
-const messageForm = document.querySelector('[name="leave_message"]')
+let submitButton = document.querySelector('#submit')
+let editButton = document.querySelector('#edit')
+let deleteButton = document.querySelector('#delete')
+let rIndex, table = document.querySelector('table')
 
 
-//Create message 
-messageForm.addEventListener('submit', event => {
-    event.preventDefault();
-    let getName = document.querySelector('[name="name"]').value
-    let getEmail = document.querySelector('[name="email"]').value
-    let getMessage = document.querySelector('[name="message"]').value
-    let messageSection = document.querySelector('#messages')
-    let newMessage = document.createElement('li');
-     newMessage.setAttribute('id', 'inputs')
-     
-    let removeButton = document.createElement('button')
-    let editButton = document.createElement('button')
-    let messageList = messageSection.lastElementChild
+function emptyInput () {
+    let isEmpty = false;
+    let nameInput = document.querySelector('#name').value
+    let emailInput = document.querySelector('#email').value
+    let messageInput = document.querySelector('#message').value
 
-    // console.log(h2);
-    // console.log(messageSection);
+    if(nameInput === ''){
+        alert("Name can't be empty")
+        isEmpty = true
+    } else if(emailInput === ''){
+        alert("Email can't be empty")
+        isEmpty = true
+    } else if(messageInput === ''){
+        alert("Message can't be empty")
+        isEmpty = true
+    } 
+    return isEmpty
+}
 
-// Remove and Edit button creation 
-    removeButton.innerText = 'remove'
-    removeButton.setAttribute('type', 'button')
-    editButton.innerText = 'edit'
-    editButton.setAttribute('type', 'button')
-    newMessage.innerHTML = `<a href=mailto: ${getEmail}>${getName}</a>  <span>wrote:${getMessage}</span>`
-    newMessage.appendChild(removeButton)
-    messageList.appendChild(newMessage)
-    newMessage.appendChild(editButton)
+submitButton.addEventListener('click', () => {
+
+    if(!emptyInput ()) {
+    let newRow = table.insertRow(table.length);
+    let cellOne = newRow.insertCell(0);
+    let cellTwo = newRow.insertCell(1);
+    let cellThree = newRow.insertCell(2);
+    let nameInput = document.querySelector('#name').value
+    let emailInput = document.querySelector('#email').value
+    let messageInput = document.querySelector('#message').value
+
+    cellOne.innerHTML = nameInput;
+    cellTwo.innerHTML =   `<a href=mailto: ${emailInput}>${emailInput}</a>`
+    console.log(cellTwo);
+    cellThree.innerHTML = messageInput;
+
+    clickedRowtoInput()
+    }
+})
+
+
+function clickedRowtoInput() {
     
+    for (let i = 1; i < table.rows.length; i++) {
+        table.rows[i].addEventListener('click', function () {
+            rIndex = this.rowIndex;
+            document.querySelector('#name').value = this.cells[0].innerHTML;
+            document.querySelector('#email').value = this.cells[1].innerHTML;
+            document.querySelector('#message').value = this.cells[2].innerHTML;
+        })
+    }
+}
 
+clickedRowtoInput()
 
-    messageForm.reset();
+editButton.addEventListener('click', () => {
+    
+    let nameInput = document.querySelector('#name').value
+    let emailInput = document.querySelector('#email').value
+    let messageInput = document.querySelector('#message').value
+    if(!emptyInput ()) {
+    table.rows[rIndex].cells[0].innerHTML = nameInput;
+    table.rows[rIndex].cells[1].innerHTML = `<a href=mailto: ${emailInput}>${emailInput}</a>`
+    table.rows[rIndex].cells[2].innerHTML = messageInput;
+    }
+})
 
-    // Remove button
-    removeButton.addEventListener('click', () => {
-        let enrty = removeButton.parentNode
-        enrty.remove()
-    })
+deleteButton.addEventListener ('click', () =>  {
+    table.deleteRow(rIndex);
+    document.querySelector('#name').value = '';
+    document.querySelector('#email').value = '';
+    document.querySelector('#message').value = '';
 
-    //Edit button 
-    editButton.addEventListener('click', () => {
-        newMessage.contentEditable = true;
-        console.log();
-        // let editText = newMessage.children
-        // for(let i=0; i<editText.length; i++){
-        //     messageItems = editText[i].innerText
-             
-        //        console.log(messageItems);
-        //       }
-        
-        //console.log(editText[0].innerText);
+})
 
-        //  email.value = messageItems.firstElementChild.innerText
-        // console.log(editText.value);
-        //   for(let i=0; i<editText.length; i++){
-        // //     console.log(editText);
-        //  }
-        
-        //let editText = document.querySelector('email')
-        //let editText = messageItems.children
-        //editText.value = messageItems.firstElementChild.firstElementChild.nextElementSibling.innerText
-        //console.log(editText.value);
-        // console.log(editText);
-        // //  for(let i=0; i<editText.length; i++) {
-        //     //  let editTextChild = editText[i].innerText
-        //     //  editText.value = editTextChild
-        //     // editText.value = editTextChild.innerText
-        // }
-// //         editText.value = messageItems.firstElementChild.firstElementChild.nextElementSibling.innerText
-        //   let parent = editButton.parentElement
-        // parent.parentElement.removeChild(parent)
-// // // ;
-    })
-
-
-
-
-});
 
 // const githubRequest = new XMLHttpRequest();
 
