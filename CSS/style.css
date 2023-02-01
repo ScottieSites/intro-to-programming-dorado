@@ -60,13 +60,20 @@ tr:hover{
 }
 
 #table{
-    display: inline-block;
+    border-radius: 25px;
+    border-spacing: 5px;/* display: inline-block; */
 }
 
+th {
+    border: none;
+}
 
+td{
+    border: none;
+}
 
 section{
-    margin: 25px;
+    margin: 0px;
     padding: 20px;
 }
 
@@ -175,13 +182,18 @@ footer{
     body {background: #ACC8E5;}
 }
 
+#about-me{
+    margin: 2rem;
+}
 
-.nav{
+
+.nav-main{
     margin: 0 auto;
     width: 100%;
     background:#F7F6F5;
     border-top: 1px solid #CFCFCF;
-    
+    position: fixed;
+   
 }
 
 
@@ -212,6 +224,7 @@ footer{
     font-family: Roboto;
     font-size: 1.5rem;
     font-weight: 800;
+    margin-top: 25px;
   }
 
   .nav-item-link:hover{
