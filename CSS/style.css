@@ -157,6 +157,14 @@ button[type=button]{
     
 }
 
+#contact-me{
+    margin-top: 8rem;
+}
+
+#contact{
+    margin-top: 8rem;
+}
+
 footer{
     box-sizing: border-box;
     width: 10%;
